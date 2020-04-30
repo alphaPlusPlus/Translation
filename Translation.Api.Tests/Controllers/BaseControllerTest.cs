@@ -1,4 +1,6 @@
-﻿using System.Security.Claims;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
@@ -9,7 +11,7 @@ namespace Translation.Api.Tests.Controllers
 {
     public class BaseControllerTest
     {
-        public readonly SqlLiteDbContext Context;
+        protected readonly SqlLiteDbContext context;
         public ControllerContext ControllerContextMock { get; }
 
         public BaseControllerTest()
@@ -18,7 +20,7 @@ namespace Translation.Api.Tests.Controllers
                 .UseInMemoryDatabase("ChickenStepsDb");
 
             var context = new SqlLiteDbContext(builder.Options);
-            this.Context = context;
+            this.context = context;
 
             var userMock = Substitute.For<ClaimsPrincipal>();
 
@@ -27,6 +29,17 @@ namespace Translation.Api.Tests.Controllers
 
             ControllerContextMock = Substitute.For<ControllerContext>();
             ControllerContextMock.HttpContext = httpContextMock;
+        }
+
+        public IEnumerable<string> GetErrors(ActionResult result, string key)
+        {
+            if (!(result is BadRequestObjectResult badRequestResult))
+            {
+                throw new ArgumentException($"Must be assignable to {nameof(BadRequestObjectResult)}.", nameof(result));
+            }
+
+            var errors = (SerializableError)badRequestResult.Value;
+            return (string[])errors[key];
         }
     }
 }

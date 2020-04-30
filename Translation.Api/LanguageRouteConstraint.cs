@@ -1,10 +1,19 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Translation.Api
 {
     public class LanguageRouteConstraint : IRouteConstraint
     {
+        private enum SupportedLanguagesEnum
+        {
+            en,
+            sv
+        }
+
         public bool Match(HttpContext httpContext, IRouter route, string routeKey, RouteValueDictionary values,
             RouteDirection routeDirection)
         {
@@ -15,7 +24,7 @@ namespace Translation.Api
 
             var lang = values["language"].ToString();
 
-            return lang == "en" || lang == "sv";
+            return Enum.GetNames(typeof(SupportedLanguagesEnum)).Any(value => value == lang);
         }
     }
 }

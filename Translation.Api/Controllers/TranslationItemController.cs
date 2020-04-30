@@ -54,7 +54,7 @@ namespace Translation.Api.Controllers
 
             if (duplicateTranslationItemExist)
             {
-                ModelState.AddModelError(nameof(TranslationItemDto.Key), $"{nameof(TranslationItemDto.Key)} is not unique");
+                ModelState.AddModelError(nameof(TranslationItemDto.Key), $"{nameof(TranslationItemDto.Key)} is Duplicate.");
             }
 
             if (!ModelState.IsValid)

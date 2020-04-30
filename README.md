@@ -17,7 +17,8 @@ Clients can then query buy-chips for language ‘en’ and retrieve “Buy chips
 - Nsubstitute
 - Fluent Assertions
 
-##EndPoints
+## EndPoints
+
 |Method |url|Description|
 | :------------ | :------------ | :------------ |
 | GET | /api/{language}/translationitems   | Get all translation items for specific language |

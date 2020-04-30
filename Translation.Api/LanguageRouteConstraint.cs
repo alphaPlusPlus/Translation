@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Translation.Api
 {

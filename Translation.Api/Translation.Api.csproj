@@ -16,5 +16,8 @@
     <ProjectReference Include="..\Translation.Data\Translation.Data.csproj" />
   </ItemGroup>
 
-
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
 </Project>

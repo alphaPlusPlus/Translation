@@ -16,6 +16,10 @@ namespace Translation.Api.Controllers
             this._context = context;
         }
 
+        /// <summary>
+        /// Get all translation items for specific language 
+        /// </summary>
+        /// <param name="language">en,sv</param>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet]
         public ActionResult<TranslationItemDto> GetTranslationItems(string language)
@@ -27,6 +31,11 @@ namespace Translation.Api.Controllers
             return Ok(translationItems.Select(TranslationItemDto.Construct));
         }
 
+        /// <summary>
+        /// Get translation item by key for specific language 
+        /// </summary>
+        /// <param name="language">en,sv</param>
+        /// <param name="key">Translation item key</param>
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet("{key}")]
@@ -43,6 +52,10 @@ namespace Translation.Api.Controllers
             return Ok(TranslationItemDto.Construct(translationItem));
         }
 
+        /// <summary>
+        /// Create a translation item for specific language
+        /// </summary>
+        /// <param name="language">en,sv</param>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -75,6 +88,11 @@ namespace Translation.Api.Controllers
         }
 
 
+        /// <summary>
+        /// Delete a translation item by key for specific language
+        /// </summary>
+        /// <param name="language">en,sv</param>
+        /// <param name="key">Translation item key</param>
         [HttpDelete("{key}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

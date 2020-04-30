@@ -8,7 +8,7 @@ Clients can then query buy-chips for language ‘en’ and retrieve “Buy chips
 
 ## Technologies
 - .Net core 3.1
-- Enitiy framework core
+- Entity framework core
 - Sqlite as a persistent storage (for simplicity)
 - Swagger
 ##### Testing

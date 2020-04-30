@@ -23,7 +23,7 @@ Clients can then query buy-chips for language ‘en’ and retrieve “Buy chips
 | :------------ | :------------ | :------------ |
 | GET | /api/{language}/translationitems   | Get all translation items for specific language |
 |GET| /api/{language}/translationitems/{key}   | Get translation item by key for specific language|
-|POST| /api​/{language}​/translationitems| Create a translation item for specific language. Request body Example {"key": "string", "value": "string" }|
+|POST| /api/{language}/translationitems| Create a translation item for specific language. Request body Example {"key": "string", "value": "string" }|
 |DELETE| /api/{language}/translationitems/{key}|Delete a translation item by key for specific language|
 
-PS: language parameters is limited to en and sv, you can add more supported langauges by adding more languages code/id to SupportedLanguagesEnum in the LanguageRouteConstraint Class
+PS: language parameter is limited to (en and sv), you can add more supported langauges by adding more languages code/id to SupportedLanguagesEnum in the LanguageRouteConstraint Class

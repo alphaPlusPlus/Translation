@@ -6,7 +6,7 @@ using Translation.Data;
 
 namespace Translation.Data.Migrations
 {
-    [DbContext(typeof(SqlLiteDbContext))]
+    [DbContext(typeof(SqLiteDbContext))]
     partial class SqlLiteDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

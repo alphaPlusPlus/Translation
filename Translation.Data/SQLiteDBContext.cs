@@ -6,9 +6,9 @@ using Translation.Data.Entities;
 
 namespace Translation.Data
 {
-    public class SqlLiteDbContext : DbContext
+    public class SqLiteDbContext : DbContext
     {
-        public SqlLiteDbContext(DbContextOptions<SqlLiteDbContext> options)
+        public SqLiteDbContext(DbContextOptions<SqLiteDbContext> options)
             : base(options)
         {
         }

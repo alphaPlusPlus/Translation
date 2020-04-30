@@ -7,7 +7,7 @@ using Translation.Data;
 
 namespace Translation.Data.Migrations
 {
-    [DbContext(typeof(SqlLiteDbContext))]
+    [DbContext(typeof(SqLiteDbContext))]
     [Migration("20200429232326_Initial")]
     partial class Initial
     {

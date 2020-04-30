@@ -25,7 +25,7 @@ namespace Translation.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SqlLiteDbContext>(options =>
+            services.AddDbContext<SqLiteDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("TranslationDatabase"))
             );
 
@@ -46,7 +46,7 @@ namespace Translation.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SqlLiteDbContext dataContext)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SqLiteDbContext dataContext)
         {
             app.UseSwagger();
 
@@ -57,6 +57,7 @@ namespace Translation.Api
 
             if (env.IsDevelopment())
             {
+                // This is not a good approach, it is just added here for simplicity so the database will be created once you run the project.
                 dataContext.Database.Migrate();
                 app.UseDeveloperExceptionPage();
             }

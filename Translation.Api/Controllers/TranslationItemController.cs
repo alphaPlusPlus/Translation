@@ -9,9 +9,9 @@ namespace Translation.Api.Controllers
     [Route("api/{language:language}/translationitems")]
     public class TranslationItemController : Controller
     {
-        private readonly SqlLiteDbContext _context;
+        private readonly SqLiteDbContext _context;
 
-        public TranslationItemController(SqlLiteDbContext context)
+        public TranslationItemController(SqLiteDbContext context)
         {
             this._context = context;
         }

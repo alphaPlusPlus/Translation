@@ -11,15 +11,15 @@ namespace Translation.Api.Tests.Controllers
 {
     public class BaseControllerTest
     {
-        protected readonly SqlLiteDbContext context;
+        protected readonly SqLiteDbContext context;
         public ControllerContext ControllerContextMock { get; }
 
         public BaseControllerTest()
         {
-            var builder = new DbContextOptionsBuilder<SqlLiteDbContext>()
+            var builder = new DbContextOptionsBuilder<SqLiteDbContext>()
                 .UseInMemoryDatabase("ChickenStepsDb");
 
-            var context = new SqlLiteDbContext(builder.Options);
+            var context = new SqLiteDbContext(builder.Options);
             this.context = context;
 
             var userMock = Substitute.For<ClaimsPrincipal>();

@@ -14,7 +14,6 @@ Clients can then query buy-chips for language ‘en’ and retrieve “Buy chips
 ##### Testing
 - xUnit
 - AutoFixture
-- Nsubstitute
 - Fluent Assertions
 
 ## EndPoints

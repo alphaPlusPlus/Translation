@@ -16,6 +16,7 @@ Clients can then query buy-chips for language ‘en’ and retrieve “Buy chips
 - AutoFixture
 - Nsubstitute
 - Fluent Assertions
+
 ##EndPoints
 |Method |url|Description|
 | :------------ | :------------ | :------------ |
